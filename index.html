@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supriya Rayala | Cybersecurity & Security Automation</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <div class="logo">SR</div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <p class="eyebrow">Cybersecurity • SOC • Automation • AI</p>
+          <h1>Hi, I'm <span class="accent">Supriya Rayala</span></h1>
+          <p class="hero-subtitle">
+            Security+ certified <strong>SOC Analyst & Security Automation Engineer</strong> 
+            focused on AI-driven threat detection, incident response, and 
+            building real-world security tooling.
+          </p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn secondary">Contact Me</a>
+          </div>
+          <p class="hero-note">
+            MS CS @ Kent State • Security+ • SOC Labs • Python • SIEM • AI + Security
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I'm a <strong>Cybersecurity & Security Automation enthusiast</strong> currently pursuing 
+          my <strong>MS in Computer Science at Kent State University</strong>, with a focus on 
+          cybersecurity, SOC operations, and AI-driven security.
+        </p>
+        <p>
+          I started my journey as an <strong>Associate Software Engineer at Eurofins IT Solutions</strong>, 
+          working with Angular, .NET, SQL, APIs, and automation. Over time, my interest shifted toward 
+          defending systems, understanding attacker behavior, and building tools that help 
+          <strong>SOC teams detect and respond to threats faster</strong>.
+        </p>
+        <p>
+          I recently earned my <strong>CompTIA Security+</strong> certification and have been actively 
+          working on <strong>SOC labs</strong>, security automation scripts, and projects that combine 
+          <strong>Python, SIEM, and AI</strong> for practical security use cases.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="card">
+            <h3>Security & SOC</h3>
+            <ul>
+              <li>Security Operations Center (SOC) fundamentals</li>
+              <li>Incident response & triage</li>
+              <li>Threat hunting & detection</li>
+              <li>MITRE ATT&CK mapping</li>
+              <li>Phishing analysis & email security</li>
+              <li>Log analysis (auth logs, HTTP, firewall)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Automation & AI</h3>
+            <ul>
+              <li>Python for security automation</li>
+              <li>Regex & log parsing</li>
+              <li>Security scripts & mini-SOAR workflows</li>
+              <li>APIs: VirusTotal, AbuseIPDB, etc.</li>
+              <li>LLM-based analysis & summarization</li>
+              <li>Basic ML for security (phishing, anomalies)</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Development & Tools</h3>
+            <ul>
+              <li>Git, GitHub, CI/CD basics</li>
+              <li>Linux, Bash, system logs</li>
+              <li>Docker (containers for labs/tools)</li>
+              <li>Splunk, Azure Sentinel, Elastic (SIEM)</li>
+              <li>FastAPI, REST APIs</li>
+              <li>SQL, basic NoSQL</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="card project">
+            <h3>Failed Login Detector (Security Automation)</h3>
+            <p>
+              A Python-based log analysis tool that parses SSH authentication logs, 
+              extracts failed login attempts using regex, and summarizes activity 
+              per IP to help identify potential brute-force attacks.
+            </p>
+            <p class="tech">Tech: Python, Regex, Linux auth logs</p>
+            <a href="https://github.com/RayalaSupriya/Automation-Cyber-Projects/tree/main/failed-login-detector" target="_blank" class="link">
+              View on GitHub →
+            </a>
+          </div>
+
+          <div class="card project">
+            <h3>PhishDefender / PhishDeText</h3>
+            <p>
+              A phishing detection project combining machine learning and modern web technologies 
+              to analyze URLs/emails and classify them as malicious or benign, with an API-driven backend.
+            </p>
+            <p class="tech">Tech: Python, ML, FastAPI, React, Docker</p>
+            <a href="#" class="link">GitHub link (to be added) →</a>
+          </div>
+
+          <div class="card project">
+            <h3>Enterprise Threat Detection & Alerting Platform – SOC</h3>
+            <p>
+              A SOC-focused platform that ingests security logs, applies detection logic, and 
+              generates alerts mapped to MITRE ATT&CK, designed to simulate real-world SOC workflows.
+            </p>
+            <p class="tech">Tech: SIEM concepts, Python, detection rules</p>
+            <a href="#" class="link">GitHub link (to be added) →</a>
+          </div>
+
+          <div class="card project">
+            <h3>AI SOC Assistant (In Progress)</h3>
+            <p>
+              An AI-powered assistant that helps analyze logs, summarize alerts, map findings to 
+              MITRE techniques, and generate incident reports to support SOC analysts.
+            </p>
+            <p class="tech">Tech: Python, LLMs, APIs, JSON logs</p>
+            <span class="badge">Coming soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section alt">
+      <div class="container">
+        <h2>Experience & Education</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Graduate Student – MS Computer Science</h3>
+            <p class="org">Kent State University</p>
+            <p class="time">Focus: Cybersecurity, Databases, Software Engineering</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Associate Software Engineer</h3>
+            <p class="org">Eurofins IT Solutions</p>
+            <p class="time">
+              Built enterprise applications using Angular, .NET, SQL, and automation, 
+              collaborating with cross-functional teams on production systems.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h3>Teaching & Research Assistant</h3>
+            <p class="org">Kent State University</p>
+            <p class="time">
+              Assisted in Information Security, Advanced Database Systems, and 
+              research related to security and systems.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h3>Certifications</h3>
+            <p class="time">
+              CompTIA Security+ (SY0-701) – Focus on SOC, incident response, and core 
+              security principles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact</h2>
+        <p>
+          I'm open to opportunities as a <strong>SOC Analyst</strong>, 
+          <strong>Security Automation Engineer</strong>, or 
+          <strong>AI + Cybersecurity Engineer</strong>.
+        </p>
+        <div class="contact-grid">
+          <div>
+            <p><strong>Email:</strong> <a href="mailto:srayala9090@gmail.com">srayala9090@gmail.com</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/supriya-rayala-66797b178" target="_blank">linkedin.com/in/supriya-rayala-66797b178</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/RayalaSupriya" target="_blank">github.com/RayalaSupriya</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Supriya Rayala • Cybersecurity & Security Automation</p>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
