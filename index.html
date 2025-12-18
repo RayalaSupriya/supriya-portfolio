@@ -23,48 +23,54 @@
   <main>
     <!-- Hero Section -->
     <section class="hero">
-      <div class="container hero-content">
-        <div class="hero-text">
-          <p class="eyebrow">Cybersecurity • SOC • Automation • AI</p>
-          <h1>Hi, I'm <span class="accent">Supriya Rayala</span></h1>
-          <p class="hero-subtitle">
-            Security+ certified <strong>SOC Analyst & Security Automation Engineer</strong> 
-            focused on AI-driven threat detection, incident response, and 
-            building real-world security tooling.
-          </p>
-          <div class="hero-actions">
-            <a href="#projects" class="btn primary">View Projects</a>
-            <a href="#contact" class="btn secondary">Contact Me</a>
-          </div>
-          <p class="hero-note">
-            MS CS @ Kent State • Security+ • SOC Labs • Python • SIEM • AI + Security
-          </p>
-        </div>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <p class="eyebrow">Cybersecurity • SOC • Security Automation • AI</p>
+      <h1>Hi, I'm <span class="accent">Supriya Rayala</span></h1>
+      <p class="hero-subtitle">
+        <strong>Security+ certified SOC Analyst & Security Automation Engineer</strong> 
+        passionate about using Python, SIEM, and AI to detect threats faster, reduce alert fatigue,
+        and make life easier for security teams.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn primary">View Security Projects</a>
+        <a href="#contact" class="btn secondary">Contact Me</a>
       </div>
-    </section>
+      <p class="hero-note">
+        MS CS @ Kent State · Security+ (SY0-701) · SOC labs · Python · SIEM · AI for Security
+      </p>
+    </div>
+  </div>
+</section>
+
 
     <!-- About Section -->
     <section id="about" class="section">
-      <div class="container">
-        <h2>About Me</h2>
-        <p>
-          I'm a <strong>Cybersecurity & Security Automation enthusiast</strong> currently pursuing 
-          my <strong>MS in Computer Science at Kent State University</strong>, with a focus on 
-          cybersecurity, SOC operations, and AI-driven security.
-        </p>
-        <p>
-          I started my journey as an <strong>Associate Software Engineer at Eurofins IT Solutions</strong>, 
-          working with Angular, .NET, SQL, APIs, and automation. Over time, my interest shifted toward 
-          defending systems, understanding attacker behavior, and building tools that help 
-          <strong>SOC teams detect and respond to threats faster</strong>.
-        </p>
-        <p>
-          I recently earned my <strong>CompTIA Security+</strong> certification and have been actively 
-          working on <strong>SOC labs</strong>, security automation scripts, and projects that combine 
-          <strong>Python, SIEM, and AI</strong> for practical security use cases.
-        </p>
-      </div>
-    </section>
+  <div class="container">
+    <h2>About Me</h2>
+    <p>
+      I'm a <strong>Security+ certified SOC & Security Automation enthusiast</strong> currently pursuing 
+      my <strong>MS in Computer Science at Kent State University</strong>, with a focus on 
+      cybersecurity, SOC operations, and AI-driven detection.
+    </p>
+    <p>
+      I began my career as an <strong>Associate Software Engineer at Eurofins IT Solutions</strong>, 
+      building enterprise applications with Angular, .NET, SQL, and automation. That experience taught me 
+      how real-world systems are designed, deployed, and maintained.
+    </p>
+    <p>
+      Now, I'm focused on the other side: <strong>defending systems</strong>. I spend my time working on 
+      SOC labs, building Python automation scripts, exploring SIEM tooling, and using 
+      <strong>AI to speed up investigation and incident response</strong>.
+    </p>
+    <p>
+      My goal is to grow into a role as a <strong>SOC Analyst</strong> or 
+      <strong>Security Automation Engineer</strong> where I can combine strong technical skills with 
+      practical, real-world security impact.
+    </p>
+  </div>
+</section>
+
 
     <!-- Skills Section -->
     <section id="skills" class="section alt">
@@ -74,24 +80,26 @@
           <div class="card">
             <h3>Security & SOC</h3>
             <ul>
-              <li>Security Operations Center (SOC) fundamentals</li>
-              <li>Incident response & triage</li>
-              <li>Threat hunting & detection</li>
-              <li>MITRE ATT&CK mapping</li>
-              <li>Phishing analysis & email security</li>
-              <li>Log analysis (auth logs, HTTP, firewall)</li>
-            </ul>
+  <li>SOC fundamentals & alert triage</li>
+  <li>Incident response workflows</li>
+  <li>Threat hunting & detection use cases</li>
+  <li>MITRE ATT&CK mapping</li>
+  <li>Phishing analysis & email security</li>
+  <li>Log analysis (auth logs, HTTP, firewall, cloud)</li>
+</ul>
+
           </div>
           <div class="card">
             <h3>Automation & AI</h3>
             <ul>
-              <li>Python for security automation</li>
-              <li>Regex & log parsing</li>
-              <li>Security scripts & mini-SOAR workflows</li>
-              <li>APIs: VirusTotal, AbuseIPDB, etc.</li>
-              <li>LLM-based analysis & summarization</li>
-              <li>Basic ML for security (phishing, anomalies)</li>
-            </ul>
+  <li>Python for security automation (scripts & tooling)</li>
+  <li>Regex & log parsing for detections</li>
+  <li>Building mini-SOAR-style workflows</li>
+  <li>Integrating security APIs (VirusTotal, AbuseIPDB, etc.)</li>
+  <li>LLM-based log summarization & alert triage</li>
+  <li>Basic ML for security (phishing, anomaly detection)</li>
+</ul>
+
           </div>
           <div class="card">
             <h3>Development & Tools</h3>
@@ -114,49 +122,54 @@
         <h2>Projects</h2>
         <div class="projects-grid">
           <div class="card project">
-            <h3>Failed Login Detector (Security Automation)</h3>
-            <p>
-              A Python-based log analysis tool that parses SSH authentication logs, 
-              extracts failed login attempts using regex, and summarizes activity 
-              per IP to help identify potential brute-force attacks.
-            </p>
-            <p class="tech">Tech: Python, Regex, Linux auth logs</p>
-            <a href="https://github.com/RayalaSupriya/Automation-Cyber-Projects/tree/main/failed-login-detector" target="_blank" class="link">
-              View on GitHub →
-            </a>
-          </div>
+  <h3>Failed Login Detector (Security Automation)</h3>
+  <p>
+    A Python-based security script that parses SSH authentication logs, 
+    extracts failed login attempts using regex, and summarizes activity 
+    per IP. This helps identify potential brute-force attacks and 
+    suspicious behavior from authentication logs.
+  </p>
+  <p class="tech">Tech: Python, Regex, Linux auth logs</p>
+  <a href="https://github.com/RayalaSupriya/Automation-Cyber-Projects/tree/main/failed-login-detector" target="_blank" class="link">
+    View on GitHub →
+  </a>
+</div>
+
 
           <div class="card project">
-            <h3>PhishDefender / PhishDeText</h3>
-            <p>
-              A phishing detection project combining machine learning and modern web technologies 
-              to analyze URLs/emails and classify them as malicious or benign, with an API-driven backend.
-            </p>
-            <p class="tech">Tech: Python, ML, FastAPI, React, Docker</p>
-            <a href="#" class="link">GitHub link (to be added) →</a>
-          </div>
+  <h3>PhishDefender / PhishDeText</h3>
+  <p>
+    A phishing detection project that combines machine learning and modern web technologies 
+    to analyze URLs or email content and classify them as malicious or benign, with an API-first backend
+    designed for integration into security tools.
+  </p>
+  <p class="tech">Tech: Python, ML, FastAPI, React, Docker</p>
+  <a href="#" class="link">GitHub link (coming soon) →</a>
+</div>
 
           <div class="card project">
-            <h3>Enterprise Threat Detection & Alerting Platform – SOC</h3>
-            <p>
-              A SOC-focused platform that ingests security logs, applies detection logic, and 
-              generates alerts mapped to MITRE ATT&CK, designed to simulate real-world SOC workflows.
-            </p>
-            <p class="tech">Tech: SIEM concepts, Python, detection rules</p>
-            <a href="#" class="link">GitHub link (to be added) →</a>
-          </div>
+  <h3>Enterprise Threat Detection & Alerting Platform – SOC</h3>
+  <p>
+    A SOC-focused project that simulates a threat detection pipeline: ingesting security logs,
+    applying detection logic, mapping alerts to MITRE ATT&CK, and generating actionable 
+    alerts to mimic real SOC workflows.
+  </p>
+  <p class="tech">Tech: Python, detection rules, SOC concepts, MITRE ATT&CK</p>
+  <a href="#" class="link">GitHub link (coming soon) →</a>
+</div>
+
 
           <div class="card project">
-            <h3>AI SOC Assistant (In Progress)</h3>
-            <p>
-              An AI-powered assistant that helps analyze logs, summarize alerts, map findings to 
-              MITRE techniques, and generate incident reports to support SOC analysts.
-            </p>
-            <p class="tech">Tech: Python, LLMs, APIs, JSON logs</p>
-            <span class="badge">Coming soon</span>
-          </div>
-        </div>
-      </div>
+  <h3>AI SOC Assistant (In Progress)</h3>
+  <p>
+    An AI-powered assistant designed to help SOC analysts analyze logs, 
+    summarize alerts, map findings to MITRE techniques, and generate 
+    incident reports faster using LLMs and security-focused prompts.
+  </p>
+  <p class="tech">Tech: Python, LLMs, APIs, JSON logs</p>
+  <span class="badge">Coming soon</span>
+</div>
+
     </section>
 
     <!-- Experience Section -->
@@ -200,11 +213,13 @@
     <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
-        <p>
-          I'm open to opportunities as a <strong>SOC Analyst</strong>, 
-          <strong>Security Automation Engineer</strong>, or 
-          <strong>AI + Cybersecurity Engineer</strong>.
-        </p>
+       <p>
+  I'm open to opportunities as a <strong>SOC Analyst</strong>, 
+  <strong>Security Automation Engineer</strong>, or 
+  <strong>AI + Cybersecurity Engineer</strong> where I can combine Python, SIEM,
+  and automation to make security operations faster and more effective.
+</p>
+
         <div class="contact-grid">
           <div>
             <p><strong>Email:</strong> <a href="mailto:srayala9090@gmail.com">srayala9090@gmail.com</a></p>
