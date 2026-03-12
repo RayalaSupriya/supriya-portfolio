@@ -3,255 +3,1263 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Supriya Rayala | Cybersecurity & Security Automation</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Supriya Rayala | Network Security Engineer & SOC Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #06b6d4;
+      --primary-dark: #0891b2;
+      --secondary: #f97316;
+      --accent: #ec4899;
+      --dark-bg: #0a0e27;
+      --dark-card: #1a1f3a;
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --border: #2d3748;
+      --glow: rgba(6, 182, 212, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0f3460 100%);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      background-attachment: fixed;
+    }
+
+    /* ==================== ANIMATIONS ==================== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+      }
+    }
+
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+
+    /* ==================== NAVIGATION ==================== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(10, 14, 39, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(6, 182, 212, 0.1);
+      z-index: 1000;
+      padding: 1.2rem 2rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+      font-family: 'Space Mono', monospace;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* ==================== HERO ==================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 50%);
+      animation: float 20s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(0px); }
+      50% { transform: translateX(50px); }
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 4.5rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+      animation: fadeInUp 0.8s ease 0.2s backwards;
+      background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      animation: fadeInUp 0.8s ease 0.3s backwards;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.8;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+      animation: fadeInUp 0.8s ease 0.4s backwards;
+    }
+
+    .stat {
+      padding: 1.5rem;
+      background: rgba(6, 182, 212, 0.05);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .stat:hover {
+      background: rgba(6, 182, 212, 0.1);
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px var(--glow);
+    }
+
+    .stat-value {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeInUp 0.8s ease 0.5s backwards;
+      margin-bottom: 3rem;
+    }
+
+    .btn {
+      padding: 1rem 2.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      transition: left 0.5s ease;
+      z-index: 0;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--dark-bg);
+      box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(6, 182, 212, 0.6);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(6, 182, 212, 0.1);
+      transform: translateY(-3px);
+    }
+
+    /* ==================== SECTIONS ==================== */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ==================== ABOUT ==================== */
+    .about {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(249, 115, 22, 0.02) 100%);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+
+    .about-content p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+    }
+
+    .about-content strong {
+      color: var(--primary);
+    }
+
+    .expertise-showcase {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .expertise-card {
+      padding: 1.5rem;
+      background: rgba(6, 182, 212, 0.08);
+      border-left: 4px solid var(--primary);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .expertise-card:hover {
+      background: rgba(6, 182, 212, 0.15);
+      transform: translateX(10px);
+    }
+
+    .expertise-card strong {
+      color: var(--primary);
+      font-size: 1.1rem;
+    }
+
+    /* ==================== SKILLS ==================== */
+    .skills {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.02) 0%, rgba(6, 182, 212, 0.05) 100%);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .skill-card {
+      background: linear-gradient(135deg, rgba(26, 31, 58, 0.8) 0%, rgba(6, 182, 212, 0.08) 100%);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 15px;
+      padding: 2.5rem;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.8s ease backwards;
+    }
+
+    .skill-card:nth-child(1) { animation-delay: 0.1s; }
+    .skill-card:nth-child(2) { animation-delay: 0.2s; }
+    .skill-card:nth-child(3) { animation-delay: 0.3s; }
+    .skill-card:nth-child(4) { animation-delay: 0.4s; }
+    .skill-card:nth-child(5) { animation-delay: 0.5s; }
+    .skill-card:nth-child(6) { animation-delay: 0.6s; }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .skill-card:hover::before {
+      left: 100%;
+    }
+
+    .skill-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-15px);
+      box-shadow: 0 20px 50px rgba(6, 182, 212, 0.3);
+    }
+
+    .skill-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .skill-list {
+      list-style: none;
+    }
+
+    .skill-list li {
+      padding: 0.6rem 0;
+      color: var(--text-secondary);
+      position: relative;
+      padding-left: 1.5rem;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .skill-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--secondary);
+      font-weight: bold;
+    }
+
+    .skill-list li:hover {
+      color: var(--primary);
+    }
+
+    /* ==================== EXPERIENCE ==================== */
+    .experience {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(249, 115, 22, 0.02) 100%);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--primary), var(--secondary), transparent);
+    }
+
+    .exp-item {
+      margin-bottom: 2.5rem;
+      padding-left: 80px;
+      position: relative;
+      animation: slideInLeft 0.6s ease backwards;
+    }
+
+    .exp-item:nth-child(1) { animation-delay: 0.1s; }
+    .exp-item:nth-child(2) { animation-delay: 0.2s; }
+    .exp-item:nth-child(3) { animation-delay: 0.3s; }
+    .exp-item:nth-child(4) { animation-delay: 0.4s; }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 50%;
+      border: 3px solid var(--dark-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 0.7rem;
+    }
+
+    .exp-card {
+      background: rgba(26, 31, 58, 0.5);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .exp-card:hover {
+      background: rgba(26, 31, 58, 0.8);
+      border-color: var(--primary);
+      box-shadow: 0 15px 40px rgba(6, 182, 212, 0.2);
+      transform: translateX(10px);
+    }
+
+    .exp-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-company {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .exp-date {
+      color: var(--secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .exp-description {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 0.95rem;
+    }
+
+    /* ==================== PROJECTS ==================== */
+    .projects {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.02) 0%, rgba(6, 182, 212, 0.05) 100%);
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .project-card {
+      background: linear-gradient(135deg, rgba(26, 31, 58, 0.8) 0%, rgba(6, 182, 212, 0.08) 100%);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 0.8s ease backwards;
+    }
+
+    .project-card:nth-child(1) { animation-delay: 0.1s; }
+    .project-card:nth-child(2) { animation-delay: 0.2s; }
+    .project-card:nth-child(3) { animation-delay: 0.3s; }
+    .project-card:nth-child(4) { animation-delay: 0.4s; }
+    .project-card:nth-child(5) { animation-delay: 0.5s; }
+    .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.2), transparent);
+      transition: all 0.6s ease;
+    }
+
+    .project-card:hover::before {
+      top: -20%;
+      right: -20%;
+    }
+
+    .project-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-15px);
+      box-shadow: 0 25px 60px rgba(6, 182, 212, 0.3);
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 1rem;
+      gap: 1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .project-status {
+      background: rgba(6, 182, 212, 0.2);
+      color: var(--primary);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(6, 182, 212, 0.4);
+      white-space: nowrap;
+    }
+
+    .project-status.in-progress {
+      background: rgba(249, 115, 22, 0.2);
+      color: var(--secondary);
+      border-color: rgba(249, 115, 22, 0.4);
+    }
+
+    .project-description {
+      color: var(--text-secondary);
+      margin: 1.5rem 0;
+      line-height: 1.8;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-tech {
+      display: flex;
+      gap: 0.7rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tech-tag {
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--primary);
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid rgba(6, 182, 212, 0.3);
+    }
+
+    .project-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      z-index: 1;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+
+    /* ==================== CERTIFICATIONS ==================== */
+    .certifications {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.05) 0%, rgba(249, 115, 22, 0.02) 100%);
+    }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .cert-card {
+      background: linear-gradient(135deg, rgba(26, 31, 58, 0.8) 0%, rgba(6, 182, 212, 0.08) 100%);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: fadeInUp 0.8s ease backwards;
+    }
+
+    .cert-card:nth-child(1) { animation-delay: 0.1s; }
+    .cert-card:nth-child(2) { animation-delay: 0.2s; }
+    .cert-card:nth-child(3) { animation-delay: 0.3s; }
+    .cert-card:nth-child(4) { animation-delay: 0.4s; }
+    .cert-card:nth-child(5) { animation-delay: 0.5s; }
+    .cert-card:nth-child(6) { animation-delay: 0.6s; }
+
+    .cert-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 20px 50px rgba(6, 182, 212, 0.3);
+    }
+
+    .cert-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .cert-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+
+    .cert-date {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .cert-description {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* ==================== CONTACT ==================== */
+    .contact {
+      background: linear-gradient(135deg, rgba(249, 115, 22, 0.02) 0%, rgba(6, 182, 212, 0.05) 100%);
+      text-align: center;
+    }
+
+    .contact-intro {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contact-item {
+      padding: 2rem;
+      background: rgba(6, 182, 212, 0.05);
+      border: 1px solid rgba(6, 182, 212, 0.2);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      background: rgba(6, 182, 212, 0.1);
+      border-color: var(--primary);
+      transform: translateY(-5px);
+    }
+
+    .contact-label {
+      color: var(--primary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-value {
+      color: var(--text-primary);
+      font-size: 1.05rem;
+      word-break: break-word;
+    }
+
+    .contact-link {
+      color: var(--primary);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .contact-link:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+
+    /* ==================== FOOTER ==================== */
+    footer {
+      background: rgba(10, 14, 39, 0.8);
+      border-top: 1px solid rgba(6, 182, 212, 0.1);
+      padding: 2rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+        font-size: 0.85rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .expertise-showcase {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline::before {
+        left: 10px;
+      }
+
+      .exp-item {
+        padding-left: 60px;
+      }
+
+      .timeline-dot {
+        width: 30px;
+        height: 30px;
+        font-size: 0.6rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+
+      .section {
+        padding: 3rem 1rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="container nav-content">
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-container">
       <div class="logo">SR</div>
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-  <div class="container hero-content">
-    <div class="hero-text">
-      <p class="eyebrow">Cybersecurity • SOC • Security Automation • AI</p>
-      <h1>Hi, I'm <span class="accent">Supriya Rayala</span></h1>
-      <p class="hero-subtitle">
-        <strong>Security+ certified SOC Analyst & Security Automation Engineer</strong> 
-        passionate about using Python, SIEM, and AI to detect threats faster, reduce alert fatigue,
-        and make life easier for security teams.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn primary">View Security Projects</a>
-        <a href="#contact" class="btn secondary">Contact Me</a>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Supriya Rayala</h1>
+      <p class="hero-subtitle">Network Security Engineer @ Cisco | SOC Analyst | Threat Hunter | Security Automation Expert</p>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-value">3+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">6+</span>
+          <span class="stat-label">Security Platforms</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">35%</span>
+          <span class="stat-label">Threat Reduction</span>
+        </div>
+        <div class="stat">
+          <span class="stat-value">4.0</span>
+          <span class="stat-label">Master's GPA</span>
+        </div>
       </div>
-      <p class="hero-note">
-        MS CS @ Kent State · Security+ (SY0-701) · SOC labs · Python · SIEM · AI for Security
-      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="https://github.com/RayalaSupriya" target="_blank" class="btn btn-secondary">GitHub</a>
+        <a href="https://www.credly.com/users/supriya-rayala" target="_blank" class="btn btn-secondary">Certifications</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <div class="section-title">About Me</div>
+    <p class="section-subtitle">From Software Engineering to Enterprise Security Architecture</p>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-  <div class="container">
-    <h2>About Me</h2>
-    <p>
-      I'm a <strong>Security+ certified SOC & Security Automation enthusiast</strong> currently pursuing 
-      my <strong>MS in Computer Science at Kent State University</strong>, with a focus on 
-      cybersecurity, SOC operations, and AI-driven detection.
-    </p>
-    <p>
-      I began my career as an <strong>Associate Software Engineer at Eurofins IT Solutions</strong>, 
-      building enterprise applications with Angular, .NET, SQL, and automation. That experience taught me 
-      how real-world systems are designed, deployed, and maintained.
-    </p>
-    <p>
-      Now, I'm focused on the other side: <strong>defending systems</strong>. I spend my time working on 
-      SOC labs, building Python automation scripts, exploring SIEM tooling, and using 
-      <strong>AI to speed up investigation and incident response</strong>.
-    </p>
-    <p>
-      My goal is to grow into a role as a <strong>SOC Analyst</strong> or 
-      <strong>Security Automation Engineer</strong> where I can combine strong technical skills with 
-      practical, real-world security impact.
-    </p>
-  </div>
-</section>
+    <div class="about-grid">
+      <div class="about-content">
+        <p>
+          I'm a <strong>Network Security Engineer at Cisco</strong> with 3+ years of hands-on experience securing enterprise infrastructure. My expertise spans firewall architecture, SIEM implementation, SASE technologies, and cloud security—but I'm equally passionate about SOC operations and security automation.
+        </p>
+        <p>
+          Started my career in enterprise security at <strong>Infosys</strong>, where I implemented Zscaler SASE, Cisco Umbrella, and Azure AD integrations across enterprise networks. Now at Cisco, I'm architecting Firepower deployments and optimizing threat detection to reduce threats and false positives at scale.
+        </p>
+      </div>
 
+      <div class="expertise-showcase">
+        <div class="expertise-card">
+          <strong>🛡️ Network Security</strong>
+          <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">Firewall architecture, VPN, SASE, zero trust</p>
+        </div>
+        <div class="expertise-card">
+          <strong>📊 SIEM & Detection</strong>
+          <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">Splunk, Sentinel, IDS/IPS, threat correlation</p>
+        </div>
+        <div class="expertise-card">
+          <strong>☁️ Cloud Security</strong>
+          <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">Azure AD, AWS, Zscaler, compliance</p>
+        </div>
+        <div class="expertise-card">
+          <strong>🎯 SOC Operations</strong>
+          <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem;">Alert triage, threat hunting, incident response</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section alt">
-      <div class="container">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="card">
-            <h3>Security & SOC</h3>
-            <ul>
-  <li>SOC fundamentals & alert triage</li>
-  <li>Incident response workflows</li>
-  <li>Threat hunting & detection use cases</li>
-  <li>MITRE ATT&CK mapping</li>
-  <li>Phishing analysis & email security (CPPS)</li>
-  <li>Log analysis (auth logs, HTTP, firewall, cloud)</li>
-</ul>
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="skills">
+    <div class="section-title">Technical Skills</div>
+    <p class="section-subtitle">6+ years of expertise across security domains</p>
 
-          </div>
-          <div class="card">
-            <h3>Automation & AI</h3>
-            <ul>
-  <li>Python for security automation (scripts & tooling)</li>
-  <li>Regex & log parsing for detections</li>
-  <li>Building mini-SOAR-style workflows</li>
-  <li>Integrating security APIs (VirusTotal, AbuseIPDB, etc.)</li>
-  <li>LLM-based log summarization & alert triage</li>
-  <li>Basic ML for security (phishing, anomaly detection)</li>
-</ul>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>🛡️ Network Security</h3>
+        <ul class="skill-list">
+          <li>Firewall Management (Cisco, Palo Alto)</li>
+          <li>VPN Security (IPSec, SSL/TLS)</li>
+          <li>SASE Technologies (Zscaler, Umbrella)</li>
+          <li>Network Segmentation & Zero Trust</li>
+          <li>Zone-based Firewall Policy</li>
+          <li>Cloud Gateway Architecture</li>
+        </ul>
+      </div>
 
-          </div>
-          <div class="card">
-            <h3>Development & Tools</h3>
-            <ul>
-              <li>Git, GitHub, CI/CD basics</li>
-              <li>Linux, Bash, system logs</li>
-              <li>Docker (containers for labs/tools)</li>
-              <li>Splunk, Azure Sentinel, Elastic (SIEM)</li>
-              <li>FastAPI, REST APIs</li>
-              <li>SQL, basic NoSQL</li>
-            </ul>
+      <div class="skill-card">
+        <h3>📊 SIEM & Detection</h3>
+        <ul class="skill-list">
+          <li>Splunk Log Analysis & Dashboards</li>
+          <li>Microsoft Sentinel Configuration</li>
+          <li>IDS/IPS Tuning (Snort, Suricata)</li>
+          <li>Alert Investigation & Triage</li>
+          <li>Threat Correlation & Analysis</li>
+          <li>MITRE ATT&CK Mapping</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>☁️ Cloud & Identity</h3>
+        <ul class="skill-list">
+          <li>Azure Active Directory (SSO, MFA)</li>
+          <li>AWS Security Services</li>
+          <li>Cloud Policy Design</li>
+          <li>Conditional Access Policies</li>
+          <li>Compliance (NIST, ISO 27001)</li>
+          <li>Cloud Assessment & Hardening</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>🔧 Vulnerability Management</h3>
+        <ul class="skill-list">
+          <li>Nessus Vulnerability Scanning</li>
+          <li>OpenVAS & Qualys Assessment</li>
+          <li>Wireshark Packet Analysis</li>
+          <li>Nmap Network Reconnaissance</li>
+          <li>Risk Remediation Planning</li>
+          <li>Patch Management Strategy</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>🖥️ Automation & Development</h3>
+        <ul class="skill-list">
+          <li>Python Security Scripts</li>
+          <li>PowerShell Administration</li>
+          <li>Bash/Linux Scripting</li>
+          <li>API Integration & Automation</li>
+          <li>Log Parsing & Regex</li>
+          <li>Compliance Automation</li>
+        </ul>
+      </div>
+
+      <div class="skill-card">
+        <h3>🎯 SOC & Incident Response</h3>
+        <ul class="skill-list">
+          <li>SOC Operations & Workflows</li>
+          <li>Alert Triage & Investigation</li>
+          <li>Threat Hunting Techniques</li>
+          <li>Phishing Analysis & Prevention</li>
+          <li>Containment & Remediation</li>
+          <li>Forensics & Timeline Analysis</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="experience">
+    <div class="section-title">Professional Experience</div>
+    <p class="section-subtitle">Building security solutions across enterprise networks</p>
+
+    <div class="timeline">
+      <div class="exp-item">
+        <div class="timeline-dot">01</div>
+        <div class="exp-card">
+          <div class="exp-title">Network Security Engineer</div>
+          <div class="exp-company">Cisco - USA</div>
+          <div class="exp-date">Jun 2025 – Feb 2026</div>
+          <div class="exp-description">
+            Architecting and deploying Cisco Secure Firewall (Firepower NGFW) across enterprise perimeters. <strong>Reduced unauthorized access by 35%</strong> with zone-based policies. <strong>Cut IPS false positives by 30%</strong> through signature optimization. Integrated Splunk SIEM for real-time threat correlation, <strong>improving incident triage time by 25%</strong>.
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-          <div class="card project">
-  <h3>Failed Login Detector (Security Automation)</h3>
-  <p>
-    A Python-based security script that parses SSH authentication logs, 
-    extracts failed login attempts using regex, and summarizes activity 
-    per IP. This helps identify potential brute-force attacks and 
-    suspicious behavior from authentication logs.
-  </p>
-  <p class="tech">Tech: Python, Regex, Linux auth logs</p>
-  <a href="https://github.com/RayalaSupriya/Automation-Cyber-Projects/tree/main/failed-login-detector" target="_blank" class="link">
-    View on GitHub →
-  </a>
-</div>
-
-
-          <div class="card project">
-  <h3>PhishDefender / PhishDeText</h3>
-  <p>
-    A phishing detection project that combines machine learning and modern web technologies 
-    to analyze URLs or email content and classify them as malicious or benign, with an API-first backend
-    designed for integration into security tools.
-  </p>
-  <p class="tech">Tech: Python, ML, FastAPI, React, Docker</p>
-  <a href="#" class="link">GitHub link (coming soon) →</a>
-</div>
-
-          <div class="card project">
-  <h3>Enterprise Threat Detection & Alerting Platform – SOC</h3>
-  <p>
-    A SOC-focused project that simulates a threat detection pipeline: ingesting security logs,
-    applying detection logic, mapping alerts to MITRE ATT&CK, and generating actionable 
-    alerts to mimic real SOC workflows.
-  </p>
-  <p class="tech">Tech: Python, detection rules, SOC concepts, MITRE ATT&CK</p>
-  <a href="#" class="link">GitHub link (coming soon) →</a>
-</div>
-
-
-          <div class="card project">
-  <h3>AI SOC Assistant (In Progress)</h3>
-  <p>
-    An AI-powered assistant designed to help SOC analysts analyze logs, 
-    summarize alerts, map findings to MITRE techniques, and generate 
-    incident reports faster using LLMs and security-focused prompts.
-  </p>
-  <p class="tech">Tech: Python, LLMs, APIs, JSON logs</p>
-  <span class="badge">Coming soon</span>
-</div>
-
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section alt">
-      <div class="container">
-        <h2>Experience & Education</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Graduate Student – MS Computer Science</h3>
-            <p class="org">Kent State University</p>
-            <p class="time">Focus: Cybersecurity, Databases, Software Engineering</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Associate Software Engineer</h3>
-            <p class="org">Eurofins IT Solutions</p>
-            <p class="time">
-              Built enterprise applications using Angular, .NET, SQL, and automation, 
-              collaborating with cross-functional teams on production systems.
-            </p>
-          </div>
-          <div class="timeline-item">
-            <h3>Teaching & Research Assistant</h3>
-            <p class="org">Kent State University</p>
-            <p class="time">
-              Assisted in Information Security, Advanced Database Systems, and 
-              research related to security and systems.
-            </p>
-          </div>
-          <div class="timeline-item">
-  <h3>Certifications</h3>
-  <p class="time">
-    ✔ CompTIA Security+ (SY0-701) – Core security concepts, SOC fundamentals, and incident response.
-  </p>
-  <p class="time">
-    ✔ Certified Phishing Prevention Specialist (CPPS) – Hack & Fix Academy  
-    – Focused on phishing techniques, red flags in emails, and user awareness.
-  </p>
-  <p class="time">
-    View more certifications on Credly:  
-    <a href="https://www.credly.com/users/supriya-rayala" target="_blank">
-      credly.com/supriya-rayala
-    </a>
-  </p>
-</div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-      <div class="container">
-        <h2>Contact</h2>
-       <p>
-  I'm open to opportunities as a <strong>SOC Analyst</strong>, 
-  <strong>Security Automation Engineer</strong>, or 
-  <strong>AI + Cybersecurity Engineer</strong> where I can combine Python, SIEM,
-  and automation to make security operations faster and more effective.
-</p>
-
-        <div class="contact-grid">
-          <div>
-            <p><strong>Email:</strong> <a href="mailto:srayala9090@gmail.com">srayala9090@gmail.com</a></p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/supriya-rayala-66797b178" target="_blank">linkedin.com/in/supriya-rayala-66797b178</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/RayalaSupriya" target="_blank">github.com/RayalaSupriya</a></p>
-            <p><strong>Credly:</strong> <a href="https://www.credly.com/users/supriya-rayala" target="_blank">credly.com/supriya-rayala</a></p>
-
+      <div class="exp-item">
+        <div class="timeline-dot">02</div>
+        <div class="exp-card">
+          <div class="exp-title">Network Security Analyst</div>
+          <div class="exp-company">Infosys – India</div>
+          <div class="exp-date">Jan 2021 – Nov 2023</div>
+          <div class="exp-description">
+            Implemented enterprise-wide SASE transformation with Zscaler ZIA/ZPA. <strong>Reduced web-based incidents by 30%</strong> and <strong>eliminated 60% VPN dependency</strong>. Designed cloud security architecture with Palo Alto Prisma Access. <strong>Automated compliance reporting by 40%</strong> using Python.
           </div>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer class="footer">
-    <div class="container">
-      <p>© <span id="year"></span> Supriya Rayala • Cybersecurity & Security Automation</p>
+      <div class="exp-item">
+        <div class="timeline-dot">03</div>
+        <div class="exp-card">
+          <div class="exp-title">Teaching & Research Assistant</div>
+          <div class="exp-company">Kent State University</div>
+          <div class="exp-date">Jun 2024 – May 2025</div>
+          <div class="exp-description">
+            Assisting with Information Security and Advanced Database Systems courses. Supporting security research initiatives and mentoring students on cybersecurity topics and best practices.
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="projects">
+    <div class="section-title">Featured Projects</div>
+    <p class="section-subtitle">Building security tools and solutions in real-time</p>
+
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">🔍 Network Traffic Analyzer</div>
+          <span class="project-status in-progress">In Progress</span>
+        </div>
+        <p class="project-description">Real-time packet inspection and anomaly detection. Decodes network traffic patterns, identifies suspicious behavior, surfaces actionable security insights.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Wireshark</span>
+          <span class="tech-tag">Scapy</span>
+          <span class="tech-tag">Real-time Analytics</span>
+        </div>
+        <a href="https://github.com/RayalaSupriya" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">📊 SOC Analyst Certification</div>
+          <span class="project-status">Active</span>
+        </div>
+        <p class="project-description">Hands-on incident response training through LetsDefend. Covers alert triage, malware analysis, IoC investigation, and real-world SOC workflows.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Incident Response</span>
+          <span class="tech-tag">Threat Hunting</span>
+          <span class="tech-tag">Log Analysis</span>
+          <span class="tech-tag">Forensics</span>
+        </div>
+        <a href="https://letsdefe.end.com" target="_blank" class="project-link">Platform →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">⚙️ Failed Login Detector</div>
+          <span class="project-status">Completed</span>
+        </div>
+        <p class="project-description">Python automation script that parses SSH logs, extracts failed attempts, summarizes activity per IP. Identifies brute-force attacks.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Regex</span>
+          <span class="tech-tag">Linux</span>
+        </div>
+        <a href="https://github.com/RayalaSupriya/Automation-Cyber-Projects/tree/main/failed-login-detector" target="_blank" class="project-link">GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">🛡️ Enterprise Threat Detection Platform</div>
+          <span class="project-status in-progress">In Development</span>
+        </div>
+        <p class="project-description">SOC-focused threat detection pipeline. Ingests security logs, applies detection logic, maps alerts to MITRE ATT&CK, generates actionable alerts mimicking real SOC workflows.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Detection Rules</span>
+          <span class="tech-tag">MITRE ATT&CK</span>
+          <span class="tech-tag">Log Analysis</span>
+        </div>
+        <a href="https://github.com/RayalaSupriya" target="_blank" class="project-link">GitHub →</a>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <div class="project-title">🔥 Firewall Log Analyzer</div>
+          <span class="project-status in-progress">In Progress</span>
+        </div>
+        <p class="project-description">Advanced firewall log parsing and analysis tool. Extracts security events, identifies policy violations, anomalies, and attack patterns from enterprise firewall logs in real-time.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">Log Parsing</span>
+          <span class="tech-tag">Regex</span>
+          <span class="tech-tag">Security Analytics</span>
+        </div>
+        <a href="https://github.com/RayalaSupriya" target="_blank" class="project-link">View on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications" class="certifications">
+    <div class="section-title">Certifications & Credentials</div>
+    <p class="section-subtitle">Verified qualifications and ongoing learning</p>
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-icon">🔐</div>
+        <h3>CompTIA Security+</h3>
+        <div class="cert-date">November 2025</div>
+        <p class="cert-description">Core security concepts, SOC fundamentals, incident response, and threat management.</p>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🎓</div>
+        <h3>Certified Phishing Prevention</h3>
+        <div class="cert-date">Hack & Fix Academy</div>
+        <p class="cert-description">Phishing techniques, email security, red flags, user awareness training.</p>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🌐</div>
+        <h3>Cisco CCNA Modules</h3>
+        <div class="cert-date">2021</div>
+        <p class="cert-description">Networking fundamentals, routing, switching, TCP/IP, network design.</p>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">🎓</div>
+        <h3>Google Cyber Security</h3>
+        <div class="cert-date">2026</div>
+        <p class="cert-description">Comprehensive cybersecurity: incident response, log analysis, SOC operations.</p>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">📚</div>
+        <h3>Master's Computer Science</h3>
+        <div class="cert-date">Kent State • 4.0 GPA</div>
+        <p class="cert-description">Focus: Cybersecurity, databases, software engineering. Dec 2025.</p>
+      </div>
+
+      <div class="cert-card">
+        <div class="cert-icon">📚</div>
+        <h3>B.Tech Computer Science</h3>
+        <div class="cert-date">SRK Institute • 3.65 GPA</div>
+        <p class="cert-description">Foundation in CS, programming, system design, and architecture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <div class="section-title">Let's Connect</div>
+    <p class="contact-intro">I'm open to opportunities in Network Security, SOC Operations, Security Automation, and Threat Detection. Let's build something secure together.</p>
+
+    <div class="contact-grid">
+      <div class="contact-item">
+        <div class="contact-label">📧 Email</div>
+        <a href="/cdn-cgi/l/email-protection#e89b9d989a819189c69a8991898489d9a88f85898184c68b8785" class="contact-link"><span class="__cf_email__" data-cfemail="9eedebeeecf7e7ffb0ecffe7fff2ffafdef9f3fff7f2b0fdf1f3">[email&#160;protected]</span></a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">📱 Phone</div>
+        <a href="tel:+13308015795" class="contact-link">+1 (330) 801-5795</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">📍 Location</div>
+        <div class="contact-value">Ohio, USA 🇺🇸</div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">💼 LinkedIn</div>
+        <a href="https://linkedin.com/in/supriya-rayala" target="_blank" class="contact-link">linkedin.com/in/supriya-rayala</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">🐙 GitHub</div>
+        <a href="https://github.com/RayalaSupriya" target="_blank" class="contact-link">github.com/RayalaSupriya</a>
+      </div>
+      <div class="contact-item">
+        <div class="contact-label">🏅 Credly</div>
+        <a href="https://www.credly.com/users/supriya-rayala" target="_blank" class="contact-link">View Credentials</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Supriya Rayala | Network Security Engineer & SOC Analyst | 🔐 Security First, Always</p>
   </footer>
 
-  <script>
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e)
